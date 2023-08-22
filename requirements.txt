@@ -1,0 +1,4 @@
+requests==2.31.0
+Pillow==10.0.0
+selenium==4.10.0
+colorama==0.4.6
