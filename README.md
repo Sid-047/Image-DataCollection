@@ -32,7 +32,7 @@
     ```sh
     pip install -r requirements.txt
     ```
-    Note: Mozilla FireFox Web Browser is Reccommended
+    Note: Mozilla FireFox Web Browser is Recommended
 
 3. Enlist the Search Queries:
     ```sh
