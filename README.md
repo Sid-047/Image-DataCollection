@@ -5,7 +5,7 @@
 [![GitHub Issues](https://img.shields.io/github/issues/Sid-047/Image-DataCollection.svg)](https://github.com/Sid-047/Image-DataCollection/issues)
 [![GitHub Forks](https://img.shields.io/github/forks/Sid-047/Image-DataCollection.svg)](https://github.com/Sid-047/Image-DataCollection/network/members)
 
-> Image Data Collection Tool for Object Detection, Segmentation & Classification achieved through Web Scrapping (Google Images)
+> Image Data Collection Tool for Object Detection, Segmentation & Classification achieved through Web Scrapping (Google Images) ~ Image Scrapping Peeps!
 
 ## Table of Contents
 
@@ -16,19 +16,19 @@
 
 ## Installation
 
-1. Clone the repository:
+1. Clone the Repository:
    ```sh
    git clone https://github.com/Sid-047/Image-DataCollection.git
    ```
 
 ## Usage
 
-1. Navigate to the project directory:
+1. Navigate to the Project Directory:
     ```sh
     cd Image-DataCollection
     ```
 
-2. Install dependencies:
+2. Install Dependencies:
     ```sh
     pip install -r requirements.txt
     ```
@@ -37,11 +37,11 @@
 3. Enlist the Search Queries:
     ```sh
     #ImgScrapping.py
-    q = ['<Search Keyword Query>', '<Search Keyword Query>', '<Search Keyword Query>', '<Search Keyword Query>']
+    q = ['<Search Keyword Query>', '<Search Keyword Query>', '<Search Keyword Query>']
     ```
     Alter the line of Code
    
-4. Run the tool:
+4. Run the Tool:
     ```sh
     python ImgScrapping.py
     ```
