@@ -63,6 +63,7 @@ for q_ in q:
                         imgTemp.add(pic.get_attribute('src'))
                         print(Fore.BLUE+Style.BRIGHT+"\tScrapped Img{}~Img{} Url...".format(str(x+y),str(y)))
                         print(Fore.GREEN+Style.BRIGHT+pic.get_attribute('src'))
+                        q_ = q_.replace(" ", "_")
                         f = open("LinkSet.txt", "a")
                         f.write(str(list([q_, pic.get_attribute('src')]))+"\n")
                         f.close()
