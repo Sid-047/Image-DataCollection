@@ -64,7 +64,7 @@ for q_ in q:
                         print(Fore.BLUE+Style.BRIGHT+"\tScrapped Img{}~Img{} Url...".format(str(x+y),str(y)))
                         print(Fore.GREEN+Style.BRIGHT+pic.get_attribute('src'))
                         f = open("LinkSet.txt", "a")
-                        f.write(str(pic.get_attribute('src'))+"\n")
+                        f.write(str(list([q_, pic.get_attribute('src')]))+"\n")
                         f.close()
         except:
             driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
