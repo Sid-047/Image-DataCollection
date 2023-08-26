@@ -1,7 +1,6 @@
 import io
 import time
 import requests
-import datetime
 import threading
 from PIL import Image
 from colorama import Fore,Style
@@ -9,7 +8,7 @@ from colorama import Fore,Style
 
 t1=time.time()
 a=0
-f=open("New_LinkLinkSet.txt","r")
+f=open("DownURLs_set.txt","r")
 s=f.read()
 imgSet=eval(s)
 
