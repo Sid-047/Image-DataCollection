@@ -48,12 +48,12 @@ for q_ in q:
                     morePics_btn = driver.find_element(By.XPATH, "/html/body/div[2]/c-wiz/div[3]/div[1]/div/div/div/div/div[1]/div[2]/div[2]/input")
                     morePics_btn.click()
                     time.sleep(1)
-                    print(Fore.RED+Style.BRIGHT+"~~~Yoooooo !")
+                    print(Fore.RED+Style.BRIGHT+"~~~Yoooooo !"+Fore.RESET)
                 except:
                     pass
                 for pic in orgPics:
                     if pic.get_attribute('src') in imgTemp or 'encrypted' in pic.get_attribute('src'):
-                        print(Fore.YELLOW+Style.BRIGHT+pic.get_attribute('src'))
+                        print(Fore.YELLOW+Style.BRIGHT+pic.get_attribute('src')+Fore.RESET)
                         skip+=1
                         max_+=1
                         break
@@ -61,8 +61,8 @@ for q_ in q:
                         x = len(imgSet)+queryPos*imgTempVal
                         y = len(imgTemp)+queryPos*imgTempVal
                         imgTemp.add(pic.get_attribute('src'))
-                        print(Fore.BLUE+Style.BRIGHT+"\tScrapped Img{}~Img{} Url...".format(str(x+y),str(y)))
-                        print(Fore.GREEN+Style.BRIGHT+pic.get_attribute('src'))
+                        print(Fore.BLUE+Style.BRIGHT+"\tScrapped Img{}~Img{} Url...".format(str(x+y),str(y))+Fore.RESET)
+                        print(Fore.GREEN+Style.BRIGHT+pic.get_attribute('src')+Fore.RESET)
                         q_ = q_.replace(" ", "_")
                         f = open("Scraped_LinkSet.txt", "a")
                         f.write(str(list([q_, pic.get_attribute('src')]))+"\n")
@@ -80,22 +80,22 @@ print("\n\n\nFetchingExecTime:", t2-t1)
 
 
 t1 = time.time()
-def saving(img_):
+def saving(imgDown):
     try:
         global imgLabel
         t1_ = time.time()
-        r = requests.get(img_).content
+        r = requests.get(imgDown).content
         f = io.BytesIO(r)
         imgf = Image.open(f)
         imgf.save("ImgSet/"+str(imgLabel)+'.png')
         t2_ = time.time()
         if imgLabel%2==0:
-            print(Fore.MAGENTA+Style.BRIGHT+str(imgLabel)+'.png in! ~ '+Fore.BLUE+Style.BRIGHT+str(t2_-t1_)+' Secs')
+            print(Fore.MAGENTA+Style.BRIGHT+str(imgLabel)+'.png in! ~ '+Fore.BLUE+Style.BRIGHT+str(t2_-t1_)+' Secs'+Fore.RESET)
         else:
-            print(Fore.CYAN+Style.BRIGHT+'\t\t'+str(imgLabel)+'.png in! ~ '+Fore.BLUE+Style.BRIGHT+str(t2_-t1_)+' Secs')
+            print(Fore.CYAN+Style.BRIGHT+'\t\t'+str(imgLabel)+'.png in! ~ '+Fore.BLUE+Style.BRIGHT+str(t2_-t1_)+' Secs'+Fore.RESET)
         imgLabel+=1
     except:
-        print(Fore.RED+Style.BRIGHT+"~~~|",i)
+        print(Fore.RED+Style.BRIGHT+"~~~| "+str(i)+Fore.RESET)
         pass
 
 for i in imgSet:
