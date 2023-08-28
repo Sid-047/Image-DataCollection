@@ -15,7 +15,7 @@ imgTempVal = 0
 t1 = time.time()
 driver = webdriver.Firefox()
 q = ['<Search Keyword Query>', '<Search Keyword Query>', '<Search Keyword Query>', '<Get some More Queries On!>']
-f = open("LinkSet.txt", "a")
+f = open("Scraped_LinkSet.txt", "a")
 f.write("\n\n\n\n\n\n\n\n\n\n")
 f.write(str(datetime.datetime.now())+'\n')
 f.close()
@@ -64,7 +64,7 @@ for q_ in q:
                         print(Fore.BLUE+Style.BRIGHT+"\tScrapped Img{}~Img{} Url...".format(str(x+y),str(y)))
                         print(Fore.GREEN+Style.BRIGHT+pic.get_attribute('src'))
                         q_ = q_.replace(" ", "_")
-                        f = open("LinkSet.txt", "a")
+                        f = open("Scraped_LinkSet.txt", "a")
                         f.write(str(list([q_, pic.get_attribute('src')]))+"\n")
                         f.close()
         except:
