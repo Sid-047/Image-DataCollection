@@ -1,4 +1,5 @@
 import io
+import os
 import time
 import requests
 import datetime
@@ -78,7 +79,8 @@ for q_ in q:
 t2 = time.time()
 print("\n\n\nFetchingExecTime:", t2-t1)
 
-
+if not os.path.isdir("ImgSet"):
+   os.makedirs("ImgSet")
 t1 = time.time()
 def saving(imgDown):
     try:
