@@ -1,6 +1,6 @@
 f = open("N:\OpenSourceContribution\Image-DataCollection\LinkSet.txt", "r")
 
-dataList = f.read().split("\n\n\n\n\n\n\n\n\n\n\n")[1:]
+dataList = ('\n'+f.read()).split("\n\n\n\n\n\n\n\n\n\n\n")[1:]
 
 print("---->", len(dataList))
 for i in dataList:
