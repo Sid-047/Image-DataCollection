@@ -2,6 +2,7 @@ f = open("Image-DataCollection\LinkSet.txt", "r")
 
 dataList = ('\n'+f.read()).split("\n\n\n\n\n\n\n\n\n\n\n")[1:]
 
+f.close()
 print("---->", len(dataList))
 dataStampList = [x.split('\n') for x in dataList]
 for i in dataStampList:
@@ -19,3 +20,7 @@ for j in dataStampList:
 
 print('---------->',len(LinkSet))
 print(LinkSet)
+
+f = open("Image-DataCollection\DownURLs_set.txt", "w")
+f.write(str(LinkSet))
+f.close()
