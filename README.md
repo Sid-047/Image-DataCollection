@@ -48,6 +48,18 @@
 
 5. Boom! That is it.
 
+6. But Wait! What if yo Program's crashed? No Worries:
+   ```sh
+    python URLset_convo.py
+    ```
+   Select the right TimeStamp, then GooD to Go!
+
+7. Just the Last One:
+   ```sh
+    python ImgDown.py
+    ```
+   You could see the Image Files Written
+
 ## Features
 
 - Automated Image Web Scrapping via Selenium.
