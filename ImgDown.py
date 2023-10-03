@@ -1,6 +1,7 @@
 import io
 import os
 import time
+import glob
 import requests
 import threading
 from PIL import Image
@@ -13,8 +14,19 @@ f=open("DownURLs_set.txt","r")
 s=f.read()
 imgSet=eval(s)
 
-if not os.path.isdir("ImgSet"):
-   os.makedirs("ImgSet")
+if not os.path.isdir("imgSet"):
+   os.makedirs("imgSet")
+else:
+    fileList = []
+    os.chdir("imgSet")
+    imgFiles = glob.glob("*.png")
+    if len(imgFiles)==0:
+        for i in imgFiles:
+            try:
+                fileList.append(int(i.split(".")[0] ))
+            except:
+                pass
+        imgLabel = max(fileList)+1
 
 def saving(imgDown):
     try:
@@ -23,7 +35,7 @@ def saving(imgDown):
         r = requests.get(imgDown).content
         f = io.BytesIO(r)
         imgf = Image.open(f)
-        imgf.save("ImgSet/"+str(imgLabel)+'.png')
+        imgf.save("imgSet/"+str(imgLabel)+'.png')
         t2_ = time.time()
         if imgLabel%2==0:
             print(Fore.MAGENTA+Style.BRIGHT+str(imgLabel)+'.png in! ~ '+Fore.BLUE+Style.BRIGHT+str(t2_-t1_)+' Secs'+Fore.RESET)
