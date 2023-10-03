@@ -64,7 +64,7 @@
 
 - Automated Image Web Scrapping via Selenium.
 - The image URLs are backed in a .txt file in Real-time.
-- - Image files are Dynamically written without OverWriting.
+- Image files are Dynamically written without OverWriting.
 - Concept of Threading & TimeOut is used to efficiently write the Image files.
 - The Image URLs are scrapped at first, next off the Image downloads are initiated.
 - Should a glitch disrupt the execution, Fear Not! the URLs stored in the .txt files can be served to initiate Image downloads via ImgDown.py.
