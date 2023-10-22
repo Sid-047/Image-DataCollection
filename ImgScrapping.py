@@ -45,7 +45,7 @@ for q_ in q:
                     break
                 img.click()
                 time.sleep(1)
-                orgPics = driver.find_elements(By.CSS_SELECTOR, ".r48jcc.pT0Scc.iPVvYb")
+                orgPics = driver.find_elements(By.XPATH, "/html/body/div[2]/c-wiz/div[3]/div[2]/div[3]/div[2]/div[2]/div[2]/div[2]/c-wiz/div/div/div/div[3]/div[1]/a/img[1]")
                 try:
                     morePics_btn = driver.find_element(By.XPATH, "/html/body/div[2]/c-wiz/div[3]/div[1]/div/div/div/div/div[1]/div[2]/div[2]/input")
                     morePics_btn.click()
