@@ -1,15 +1,15 @@
 print("Come On Start Entering the Search QueryKeyWords Yo!")
-print("Press ctrl+c to Finish")
+print("Enter 'Exit' to Finish\n")
 
 a = 0
 q = []
 while True:
-    try:
-        a+=1
-        x = input("~"*a+">")
-        for i in x.split('\n'):
-            q.append(i)
-    except:
+    a+=1
+    x = input()
+    if x=='Exit':
         break
+    else:
+        if x!='':
+            q.extend(x.split('\n'))
 
-print(q)
+print('\n\n',list(set(q)))
