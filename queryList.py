@@ -12,4 +12,5 @@ while True:
         if x!='':
             q.extend(x.split('\n'))
 
-print('\n\n',list(set(q)))
+print("\n\nThe Search KeyWord Query List Yo!")
+print(list(set(q)))
