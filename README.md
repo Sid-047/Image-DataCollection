@@ -34,27 +34,40 @@
     ```
     Note: Mozilla FireFox Web Browser is Recommended
 
-3. Enlist the Search Queries:
+   Windows
+   ```sh
+    winget install Mozilla.Firefox
+    ```
+   MacOS
+   ```sh
+    brew install firefox
+    ```
+   Linux
+   ```sh
+    sudo snap install firefox
+    ```
+
+4. Enlist the Search Queries:
     ```sh
     #ImgScrapping.py
     q = ['<Search Keyword Query>', '<Search Keyword Query>', '<Search Keyword Query>']
     ```
     Alter the line of Code
    
-4. Run the Tool:
+5. Run the Tool:
     ```sh
     python ImgScrapping.py
     ```
 
-5. Boom! That is it.
+6. Boom! That is it.
 
-6. But Wait! What if yo Program's crashed? No Worries:
+7. But Wait! What if yo Program's crashed? No Worries:
    ```sh
     python URLset_convo.py
     ```
    Select the right TimeStamp, then GooD to Go!
 
-7. Just the Last One:
+8. Just the Last One:
    ```sh
     python ImgDown.py
     ```
