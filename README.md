@@ -46,28 +46,51 @@
    ```sh
     sudo snap install firefox
     ```
+4. Wait, Wanna Create QueryList?
+    ```sh
+    python queryList.py
+    ```
+    Here it Comes!
+    ```sh
+    Come On Start Entering the Search QueryKeyWords Yo!
+    Enter 'Exit' to Finish
 
-4. Enlist the Search Queries:
+    '
+    <Search Keyword Query1>
+    <Search Keyword Query2>
+    .
+    .
+    .
+    <Search Keyword QueryN>
+    Exit
+    '
+
+    The Search KeyWord Query List Yo!
+    ['<Search Keyword Query1>', '<Search Keyword Query2>', ..., '<Search Keyword QueryN>']
+    ```
+    Now copy the QueryList
+
+5. Enlist the Search Queries:
     ```sh
     #ImgScrapping.py
     q = ['<Search Keyword Query>', '<Search Keyword Query>', '<Search Keyword Query>']
     ```
-    Alter the line of Code
+    Alter the line of Code or Paste the queryList from the Previous Stage
    
-5. Run the Tool:
+6. Run the Tool:
     ```sh
     python ImgScrapping.py
     ```
 
-6. Boom! That is it.
+7. Boom! That is it.
 
-7. But Wait! What if yo Program's crashed? No Worries:
+8. But Wait! What if yo Program's crashed? No Worries:
    ```sh
     python URLset_convo.py
     ```
    Select the right TimeStamp, then GooD to Go!
 
-8. Just the Last One:
+9. Just the Last One:
    ```sh
     python ImgDown.py
     ```
@@ -80,6 +103,7 @@
 - Image files are Dynamically written without OverWriting.
 - Concept of Threading & TimeOut is used to efficiently write the Image files.
 - The Image URLs are scrapped at first, next off the Image downloads are initiated.
+- The QueryLiat can be generated via the built-in tool as per the User Inputs each Line.
 - Should a glitch disrupt the execution, Fear Not! the URLs stored in the .txt files can be served to initiate Image downloads via ImgDown.py.
 
 ## License
