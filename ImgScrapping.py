@@ -52,7 +52,13 @@ for q_ in q:
                     time.sleep(1)
                     print(Fore.RED+Style.BRIGHT+"~~~Yoooooo !"+Fore.RESET)
                 except:
-                    pass
+                    try:
+                        moreAway_btn = driver.find_element(By.XPATH, "/html/body/div[2]/c-wiz/div[3]/div[1]/div/div/div/div/div[2]/span")
+                        moreAway_btn.click()
+                        time.sleep(1)
+                        print(Fore.MAGENTA+Style.BRIGHT+"~~~Yoooooo !"+Fore.RESET)
+                    except:
+                        pass
                 for pic in orgPics:
                     if pic.get_attribute('src') in imgTemp or 'encrypted' in pic.get_attribute('src'):
                         print(Fore.YELLOW+Style.BRIGHT+pic.get_attribute('src')+Fore.RESET)
