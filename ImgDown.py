@@ -26,7 +26,10 @@ else:
                 fileList.append(int(i.split(".")[0] ))
             except:
                 pass
-        imgLabel = max(fileList)+1
+        if len(fileList)==0:
+            imgLabel = 0
+        else:
+            imgLabel = max(fileList)+1
 
 def saving(imgDown):
     try:
