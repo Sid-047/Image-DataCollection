@@ -10,7 +10,7 @@ from colorama import Fore,Style
 
 t1=time.time()
 imgDown=0
-f=open("DownURLs_set.txt","r")
+f=open("txtStuff/DownURLs_set.txt","r")
 s=f.read()
 imgSet=eval(s)
 

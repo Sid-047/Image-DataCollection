@@ -1,6 +1,7 @@
 from colorama import Fore,Style
+import os
 
-f = open("Image-DataCollection\Scraped_LinkSet.txt", "r")
+f = open("txtStuff/Scraped_LinkSet.txt", "r")
 dataList = ('\n'+f.read()).split("\n\n\n\n\n\n\n\n\n\n\n")[1:]
 f.close()
 
@@ -26,7 +27,9 @@ else:
 
     print(Fore.CYAN+Style.BRIGHT+'URL Count ---------->'+Fore.RESET+str(len(LinkSet)))
 
-    f = open("Image-DataCollection\DownURLs_set.txt", "w")
+    if not os.path.isdir("txtStuff"):
+        os.makedirs("txtStuff")
+    f = open("txtStuff/DownURLs_set.txt", "w")
     f.write(str(LinkSet))
     f.close()
     print("LinkSet's fed to DownURLs_set.txt File Yo!")
