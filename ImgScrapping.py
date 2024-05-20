@@ -51,6 +51,13 @@ for q_ in q:
                         img.click()
                         time.sleep(1)
                         orgPics = driver.find_elements(By.XPATH,"/html/body/div[6]/div/div/div/div/div/div/c-wiz/div/div[2]/div[2]/div[2]/div[2]/c-wiz/div/div/div/div/div[3]/div[1]/a/img[1]")
+                        try:
+                            morePics_btn = driver.find_element(By.XPATH, "/html/body/div[4]/div/div[13]/div/div[2]/div[2]/div/div/div/div/div[2]/div[2]/div[4]/a[1]/h3/div")
+                            morePics_btn.click()
+                            time.sleep(1)
+                            print(Fore.RED+Style.BRIGHT+"~~~Yoooooo !"+Fore.RESET)
+                        except:
+                            pass
                         for pic in orgPics:
                             if pic.get_attribute('src') in imgTemp or 'encrypted' in pic.get_attribute('src'):
                                 print(Fore.YELLOW+Style.BRIGHT+pic.get_attribute('src')+Fore.RESET)
