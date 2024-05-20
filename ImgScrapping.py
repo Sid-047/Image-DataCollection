@@ -26,7 +26,7 @@ f.close()
 
 for q_ in q:
     skip = 0
-    max_ = 150
+    max_ = 250
     queryPos+=1
     imgTempVal = 1
     imgTemp = set()
@@ -38,34 +38,39 @@ for q_ in q:
             break
         picSelect = 0
         try:
-            comPics = driver.find_elements(By.TAG_NAME,"img")[17::2]
+            comPics = driver.find_elements(By.TAG_NAME,"img")
             for img in comPics[len(imgTemp)+skip:max_]:
-                picSelect+=1
-                if picSelect%10==0:
-                    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-                    time.sleep(3)
-                if skip>100:
-                    break
-                img.click()
-                orgPics = driver.find_elements(By.XPATH,"/html/body/div[2]/c-wiz/div[3]/div[2]/div[3]/div[2]/div[2]/div[2]/div[2]/c-wiz/div/div/div/div/div[3]/div[1]/a/img[1]")
-                for pic in orgPics:
-                    if pic.get_attribute('src') in imgTemp or 'encrypted' in pic.get_attribute('src'):
-                        print(Fore.YELLOW+Style.BRIGHT+pic.get_attribute('src')+Fore.RESET)
-                        skip+=1
-                        max_+=1
-                        break
-                    if 'http' in pic.get_attribute('src') and 'encrypted' not in pic.get_attribute('src') and pic.get_attribute('src') not in imgTemp:
-                        x = len(imgSet)+queryPos*imgTempVal
-                        y = len(imgTemp)+queryPos*imgTempVal
-                        imgTemp.add(pic.get_attribute('src'))
-                        print(Fore.BLUE+Style.BRIGHT+"\tScrapped Img{}~Img{} Url...".format(str(x+y),str(y))+Fore.RESET)
-                        print(Fore.GREEN+Style.BRIGHT+pic.get_attribute('src')+Fore.RESET)
-                        q_ = q_.replace(" ", "_")
-                        if not os.path.isdir("txtStuff"):
-                            os.makedirs("txtStuff")
-                        f = open("txtStuff/Scraped_LinkSet.txt", "a")
-                        f.write(str(list([q_, pic.get_attribute('src')]))+"\n")
-                        f.close()
+                try:
+                    if int(img.get_attribute("height")) > 100:
+                        picSelect+=1
+                        if picSelect%10==0:
+                            driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+                            time.sleep(3)
+                        if skip>100:
+                            break
+                        img.click()
+                        time.sleep(1)
+                        orgPics = driver.find_elements(By.XPATH,"/html/body/div[6]/div/div/div/div/div/div/c-wiz/div/div[2]/div[2]/div[2]/div[2]/c-wiz/div/div/div/div/div[3]/div[1]/a/img[1]")
+                        for pic in orgPics:
+                            if pic.get_attribute('src') in imgTemp or 'encrypted' in pic.get_attribute('src'):
+                                print(Fore.YELLOW+Style.BRIGHT+pic.get_attribute('src')+Fore.RESET)
+                                skip+=1
+                                max_+=1
+                                break
+                            if 'http' in pic.get_attribute('src') and 'encrypted' not in pic.get_attribute('src') and pic.get_attribute('src') not in imgTemp:
+                                x = len(imgSet)+queryPos*imgTempVal
+                                y = len(imgTemp)+queryPos*imgTempVal
+                                imgTemp.add(pic.get_attribute('src'))
+                                print(Fore.BLUE+Style.BRIGHT+"\tScrapped Img{}~Img{} Url...".format(str(x+y),str(y))+Fore.RESET)
+                                print(Fore.GREEN+Style.BRIGHT+pic.get_attribute('src')+Fore.RESET)
+                                q_ = q_.replace(" ", "_")
+                                if not os.path.isdir("txtStuff"):
+                                    os.makedirs("txtStuff")
+                                f = open("txtStuff/Scraped_LinkSet.txt", "a")
+                                f.write(str(list([q_, pic.get_attribute('src')]))+"\n")
+                                f.close()
+                except:
+                    pass
         except:
             driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
             time.sleep(2)
