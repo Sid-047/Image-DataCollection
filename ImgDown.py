@@ -38,7 +38,7 @@ def saving(imgDown):
         r = requests.get(imgDown).content
         f = io.BytesIO(r)
         imgf = Image.open(f)
-        imgf.save("imgSet/"+str(imgLabel)+'.png')
+        imgf.save(str(imgLabel)+'.png')
         t2_ = time.time()
         if imgLabel%2==0:
             print(Fore.MAGENTA+Style.BRIGHT+str(imgLabel)+'.png in! ~ '+Fore.BLUE+Style.BRIGHT+str(t2_-t1_)+' Secs'+Fore.RESET)
